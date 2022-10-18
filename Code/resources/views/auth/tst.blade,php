@@ -1,0 +1,195 @@
+
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{route('register')}}">
+                        @csrf
+          <div>
+          <input
+          type="text"
+          id="team_name"
+          placeholder="Team Name"
+          name="team_name"
+          required
+          class = "@error('team_name') is-invalid @enderror"
+        >
+        @error('team_name')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+        </div>
+        <div>
+        <input
+          type="password"
+          id="password"
+          placeholder="password"
+          name="password"
+          required
+          class ="@error('password') is-invalid @enderror"
+        />
+        @error('password')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+        </div>
+        <div>
+        <input
+          type="password"
+          id="password_confirmation"
+          placeholder="Confirm Password"
+          name="password_confirmation"
+          required
+          class="@error('password_confirmation') is-invalid @enderror"
+        >
+        @error('password_confirmation')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+        </div>
+      
+      <!-- <input
+        type="radio"
+        name="binusian"
+        id="binusian"
+        name="binusian"
+        value="binusian"
+      />
+      <label for="binusian">Binusian</label>
+      <input
+        type="radio"
+        name="non-binusian"
+        id="non-binusian"
+        name="non-binusian"
+        value="non-binusian"
+      />
+      <label for="non-binusian">Non Binusian</label> -->
+        <div> <input
+          type="text"
+          name="full_name"
+          id="full_name"
+          placeholder="Full Name"
+          required
+        class="@error('full_name') is-invalid @enderror"
+        > 
+        @error('full_name')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+        </div>
+        <div><input
+          type="email"
+          name="email_leader"
+          id="email_leader"
+          placeholder="Email"
+          required
+          class="@error('email_leader') is-invalid @enderror"
+          >
+          @error('email_leader')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+        </div>
+        <div>
+        <input
+          type="text"
+          name="wa_num"
+          id="wa_num"
+          placeholder="Whatsapp Number"
+          required
+          class="@error('wa_num') is-invalid @enderror"
+        >
+        @error('wa_num')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+        </div>
+       <div>
+       <input
+          type="text"
+          name="line_id"
+          id="line_id"
+          placeholder="LINE ID"
+          required
+          class="@error('line_id') is-invalid @enderror"
+        >
+        @error('line_id')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+       </div>
+        <div>
+        <input
+          type="text"
+          name="github"
+          id="github"
+          placeholder="Github/Gitlab ID"
+          required
+          class="@error('github') is-invalid @enderror"
+        >
+        @error('github')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+        </div>
+        <div>
+        <input
+          type="text"
+          name="birth_place"
+          id="birth_place"
+          placeholder="Birth Place"
+          required
+          class="@error('birth_place') is-invalid @enderror"
+          
+        >
+        @error('birth_place')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+        </div>
+       <div>
+       <input
+          type="date"
+          name="birth_day"
+          id="birth_day"
+          placeholder="dd/mm/yyyy"
+          required
+          class="@error('birth_day') is-invalid @enderror"
+        >
+        @error('birth_day')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+               </span>
+        @enderror
+       </div>
+      
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
